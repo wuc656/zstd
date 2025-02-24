@@ -1,5 +1,5 @@
 {
-  "name": "@mongodb-js/zstd_wuc656",
+  "name": "mongodb-js-zstd-wuc656",
   "version": "2.0.1",
   "main": "lib/index.js",
   "types": "index.d.ts",
