@@ -46,36 +46,12 @@ jobs:
       - name: Load version and package info
         uses: mongodb-labs/drivers-github-tools/node/get_version_info@v2
         with:
-          npm_package_name: "@mongodb-js/zstd"
-
-
-      - name: Copy sbom file to release assets
-        shell: bash
-        if: ${{ 'node-zstd' == '' }}
-        run: cp sbom.json ${{ env.S3_ASSETS }}/sbom.json
-
-      - name: Augment SBOM and copy to release assets
-        if: ${{ 'node-zstd' != '' }}
-        uses: mongodb-labs/drivers-github-tools/sbom@v2
-        with:
-          silk_asset_group: "node-zstd"
-          sbom_file_name: sbom.json
-
-      - name: Generate authorized pub report
-        uses: mongodb-labs/drivers-github-tools/full-report@v2
-        with:
-          release_version: ${{ env.package_version }}
-          product_name: "@mongodb-js/zstd"
-          sarif_report_target_ref: main
-          third_party_dependency_tool: n/a
-          dist_filenames: artifacts/*
-          token: ${{ github.token }}
-          sbom_file_name: sbom.json
+          npm_package_name: "mongodb-js-zstd-wuc656"
 
       - uses: mongodb-labs/drivers-github-tools/upload-s3-assets@v2
         with:
           version: ${{ env.package_version }}
-          product_name: "@mongodb-js/zstd"
+          product_name: "mongodb-js-zstd-wuc656"
           dry_run: ${{ needs.release_please.outputs.release_created == '' }}
 
   publish:
