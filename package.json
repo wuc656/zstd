@@ -1,6 +1,6 @@
 {
   "name": "mongodb-js-zstd-wuc656",
-  "version": "2.0.3",
+  "version": "2.0.1",
   "main": "lib/index.js",
   "types": "index.d.ts",
   "repository": "https://github.com/wuc656/zstd",
