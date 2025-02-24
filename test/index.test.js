@@ -6,7 +6,8 @@ const { expect } = require('chai');
 describe('compat tests', function () {
   let zstdLegacy;
   try {
-    zstdLegacy = require('@mongodb-js/zstd');
+    //zstdLegacy = require('@mongodb-js/zstd');
+    zstdLegacy = require('mongodb-js-zstd-wuc656');
   } catch {
     // swallow
   }
