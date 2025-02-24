@@ -48,15 +48,6 @@ jobs:
         with:
           npm_package_name: "@mongodb-js/zstd"
 
-      - name: actions/compress_sign_and_upload
-        uses: mongodb-labs/drivers-github-tools/node/sign_node_package@v2
-        with:
-          aws_role_arn: ${{ secrets.AWS_ROLE_ARN }}
-          aws_region_name: us-east-1
-          aws_secret_id: ${{ secrets.AWS_SECRET_ID }}
-          npm_package_name: "@mongodb-js/zstd"
-          dry_run: ${{ needs.release_please.outputs.release_created == '' }}
-          sign_native: true
 
       - name: Copy sbom file to release assets
         shell: bash
